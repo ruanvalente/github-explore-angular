@@ -5,14 +5,21 @@
 
   <h1 class="title">Explore seus repositórios no Github</h1>
 
-  <form class="form">
+  <form class="form" (submit)="getRepository()">
     <input
+      [(ngModel)]="search"
       type="text"
-      name="repository"
-      id="repository"
+      name="search"
+      id="search"
       placeholder="Entre com usuário/repositório"
     />
     <button type="submit">Pesquisar</button>
   </form>
-  <span>Favor entrar com repositório correto</span>
+
+  <div>
+    <h2>{{ repository?.full_name }}</h2>
+  </div>
+  <span class="error" *ngIf="hasError"
+    >Favor entrar com repositório correto</span
+  >
 </div>

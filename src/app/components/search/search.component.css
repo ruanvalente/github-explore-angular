@@ -49,7 +49,7 @@ button:hover {
   background-color: #c0002a;
 }
 
-span {
+.error {
   display: block;
   color: #c53030;
   margin-top: 10px;
