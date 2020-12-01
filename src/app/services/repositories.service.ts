@@ -12,8 +12,7 @@ export class RepositoriesService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getRepository(repository: string): Observable<Repository> {
-    return this.httpClient
-      .get<Repository>(`${this.url}/repos/${repository}`);
+  searchRepository(repository: string): Observable<Repository[]> {
+    return this.httpClient.get<Repository[]>(`${this.url}/repos/${repository}`);
   }
 }
