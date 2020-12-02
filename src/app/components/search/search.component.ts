@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Repository } from './../../models/repository';
+
+import { StoragedService } from './../../services/storaged.service';
 import { RepositoriesService } from './../../services/repositories.service';
 
 @Component({
@@ -10,18 +13,25 @@ import { RepositoriesService } from './../../services/repositories.service';
 export class SearchComponent implements OnInit {
   hasError = false;
   search = '';
-  repository: Repository;
+  repositories: Repository[];
 
-  constructor(private repositoriesServices: RepositoriesService) {}
+  constructor(
+    private repositoriesServices: RepositoriesService,
+    private storagedService: StoragedService
+  ) {}
 
   ngOnInit(): void {
+    this.repositories = this.storagedService.getData('@GithubExploreAngular') || [];
   }
 
-  getRepository(): void {
-    this.repositoriesServices.getRepository(this.search).subscribe({
+  searchRepository(): void {
+    this.repositoriesServices.searchRepository(this.search).subscribe({
       next: (repository) => {
         console.log(repository);
-        this.repository = repository;
+        this.storagedService.saveData(
+          '@GithubExploreAngular',
+          [...this.repositories, repository]
+        );
         this.search = '';
       },
       error: (error) => {
