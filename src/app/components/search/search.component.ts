@@ -14,6 +14,7 @@ export class SearchComponent implements OnInit {
   hasError = false;
   search = '';
   repositories: Repository[];
+  loading = false;
 
   constructor(
     private repositoriesServices: RepositoriesService,
@@ -21,8 +22,12 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.repositories =
-      this.storagedService.getData('@GithubExploreAngular') || [];
+    this.loading = true;
+    setTimeout(() => {
+      this.repositories =
+        this.storagedService.getData('@GithubExploreAngular') || [];
+      this.loading = false;
+    }, 2000);
 
     this.storagedService.changeRepositoryValue.subscribe({
       next: (changeRepositoryValue) =>
