@@ -13,7 +13,7 @@
       id="search"
       placeholder="Entre com usuário/repositório"
     />
-    <button type="submit">Pesquisar</button>
+    <button type="submit" [disabled]="search.length === 0">Pesquisar</button>
   </form>
 
   <span class="error" *ngIf="hasError"
