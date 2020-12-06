@@ -1,11 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchComponent } from './components/search/search.component';
+import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
+import { ToastrModule } from 'ngx-toastr';
+
+import { SearchComponent } from './components/search/search.component';
 import { RepositoryListComponent } from './components/repository-list/repository-list.component';
 import { LoadingComponent } from './shared/loading/loading.component';
 
@@ -14,15 +19,18 @@ import { LoadingComponent } from './shared/loading/loading.component';
     AppComponent,
     SearchComponent,
     RepositoryListComponent,
-    LoadingComponent
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

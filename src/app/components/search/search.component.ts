@@ -4,6 +4,7 @@ import { Repository } from './../../models/repository';
 
 import { StoragedService } from './../../services/storaged.service';
 import { RepositoriesService } from './../../services/repositories.service';
+import { ToastrNotifyService } from './../../services/toastr-notify.service';
 
 @Component({
   selector: 'app-search',
@@ -18,7 +19,8 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private repositoriesServices: RepositoriesService,
-    private storagedService: StoragedService
+    private storagedService: StoragedService,
+    private toast: ToastrNotifyService
   ) {}
 
   ngOnInit(): void {
@@ -43,9 +45,16 @@ export class SearchComponent implements OnInit {
           ...this.repositories,
           repository,
         ]);
+        this.toast.showSucess('Repositório adicionado com sucesso');
         this.search = '';
       },
       error: (error) => {
+        this.toast.showError('Repositório não encontrado');
+        this.search = '';
+        this.hasError = true;
+        setTimeout(() => {
+          this.hasError = false;
+        }, 3600);
         console.error(error.message);
       },
     });
