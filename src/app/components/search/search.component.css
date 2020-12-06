@@ -49,6 +49,11 @@ button:hover {
   background-color: #c0002a;
 }
 
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
 .error {
   display: block;
   color: #c53030;
