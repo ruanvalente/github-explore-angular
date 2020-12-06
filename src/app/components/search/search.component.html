@@ -16,9 +16,12 @@
     <button type="submit">Pesquisar</button>
   </form>
 
-  <app-repository-list [repositories]="repositories"></app-repository-list>
-
   <span class="error" *ngIf="hasError"
     >Favor entrar com repositório correto</span
   >
+  <div *ngIf="loading">
+    <app-loading></app-loading>
+  </div>
+
+  <app-repository-list [repositories]="repositories"></app-repository-list>
 </div>

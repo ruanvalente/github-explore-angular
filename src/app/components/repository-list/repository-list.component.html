@@ -1,5 +1,5 @@
 <div class="repo-list">
-  <div id="repo-container" *ngFor="let repository of repositories.reverse()">
+  <div id="repo-container" *ngFor="let repository of repositories?.reverse()">
     <a href="#">
       <img [src]="repository.owner.avatar_url" [alt]="repository.full_name" />
       <div>

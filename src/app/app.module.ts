@@ -7,12 +7,14 @@ import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RepositoryListComponent } from './components/repository-list/repository-list.component';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    RepositoryListComponent
+    RepositoryListComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
