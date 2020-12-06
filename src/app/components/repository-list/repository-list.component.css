@@ -1,0 +1,54 @@
+#repo-container {
+  margin: 16px 0;
+}
+
+.repo-list {
+  margin-top: 80px;
+  max-width: 700px;
+}
+
+#repo-container a {
+  background: #fff;
+  border-radius: 5px;
+  width: 100%;
+  padding: 24px;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+#repo-container a:hover {
+  transform: translateX(10px);
+}
+
+#repo-container a + a {
+  margin-top: 16px;
+}
+#repo-container img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.repo-list div {
+  flex: 1;
+  margin: 0 16px;
+}
+#repo-container strong {
+  font-size: 16px;
+  color: #3d3d4d;
+  line-height: 28px;
+}
+
+#repo-container p {
+  font-size: 14px;
+  color: #a8a8b3;
+  line-height: 21px;
+}
+
+#repo-container .material-icons {
+  margin-left: auto;
+  color: #a8a8b3;
+}

@@ -21,17 +21,23 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.repositories = this.storagedService.getData('@GithubExploreAngular') || [];
+    this.repositories =
+      this.storagedService.getData('@GithubExploreAngular') || [];
+
+    this.storagedService.changeRepositoryValue.subscribe({
+      next: (changeRepositoryValue) =>
+        (this.repositories = changeRepositoryValue),
+      error: (changeRepositoryValue) => console.error(changeRepositoryValue),
+    });
   }
 
   searchRepository(): void {
     this.repositoriesServices.searchRepository(this.search).subscribe({
       next: (repository) => {
-        console.log(repository);
-        this.storagedService.saveData(
-          '@GithubExploreAngular',
-          [...this.repositories, repository]
-        );
+        this.storagedService.saveData('@GithubExploreAngular', [
+          ...this.repositories,
+          repository,
+        ]);
         this.search = '';
       },
       error: (error) => {
