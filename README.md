@@ -1,27 +1,58 @@
-# GithubExploreAngular
+<h3 align="center">
+  Github Explore Angular
+</h3>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+<img src="https://i.postimg.cc/Jzp2T7Fs/screen.png" alt="Github Explore Angular"/>
 
-## Development server
+<blockquote align="center">“Não espere para plantar, apenas tenha paciência para colher”!</blockquote>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## :rocket: Sobre a aplicação
 
-## Code scaffolding
+Explore seus repositórios no Github agora usando Angular :smile:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologias utilizadas :memo:
 
-## Build
+- [Angular](https://angular.io)
+- [TypeScript](https://www.typescriptlang.org)
+- [ngx-toastr](https://ngx-toastr.vercel.app)
+- [Angular CLI](https://cli.angular.io)
+- [Node](https://nodejs.org/en/)
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Como utilizar 🤔
 
-## Running unit tests
+É necessário que você tenha o `angular-cli` instalado em sua máquina para que você consiga utilizar o `ng serve`, para subir o seu projeto.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para insalar basta rodar o comando abaixo:
 
-## Running end-to-end tests
+```
+npm install -g @angular/cli
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Agora clone este repositório.
 
-## Further help
+```
+git clone https://github.com/ruanvalente/github-explore-angular
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Entre na pasta `github-explore-angular` e rode o comando `yarn` ou `npm install`, para instalar as dependências do projeto.
+
+Agora é só rodar o comando `ng serve` dentro da pasta do projeto !
+
+```
+cd github-explore-angular
+
+ng serve
+```
+
+Pronto ! Agora basta acessar `http://localhost:4200` :smile:
+
+## Veja a aplicação no ar :tada:
+
+**Em breve** 🤫
+
+E agora é só se divertir :smile:
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
