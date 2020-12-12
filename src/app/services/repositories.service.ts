@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,7 +9,7 @@ import { Repository } from './../models/repository';
   providedIn: 'root',
 })
 export class RepositoriesService {
-  url = `https://api.github.com`;
+  url = environment.api;
 
   constructor(private httpClient: HttpClient) {}
 
