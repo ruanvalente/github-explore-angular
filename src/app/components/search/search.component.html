@@ -26,7 +26,7 @@
 
   <app-repository-list [repositories]="repositories"></app-repository-list>
 
-  <div *ngIf="repositories?.length === 0">
+  <div *ngIf="repositories?.length === 0" class="animation-left">
     <span class="error" style="font-weight: bold"
       >Nenhum repositório adicionado</span
     >

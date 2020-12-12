@@ -17,6 +17,8 @@
   display: flex;
   align-items: center;
   transition: transform 0.2s;
+
+  animation: fade-left 0.5s forwards;
 }
 
 #repo-container a:hover {
