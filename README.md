@@ -49,7 +49,7 @@ Pronto ! Agora basta acessar `http://localhost:4200` :smile:
 
 ## Veja a aplicação no ar :tada:
 
-**Em breve** 🤫
+[Github Explore Angular](https://github-explore-angular.vercel.app)
 
 E agora é só se divertir :smile:
 
