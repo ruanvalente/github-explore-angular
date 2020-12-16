@@ -1,5 +1,6 @@
 .repository-info {
   margin-top: 80px;
+  animation: fade-left 0.5s forwards;
 }
 
 .repository-info header {
