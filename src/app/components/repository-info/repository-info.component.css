@@ -1,0 +1,53 @@
+.repository-info {
+  margin-top: 80px;
+}
+
+.repository-info header {
+  display: flex;
+  align-items: center;
+}
+
+.repository-info img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.repository-info div {
+  margin-left: 30px;
+}
+
+.repository-info strong {
+  font-size: 36px;
+  line-height: 42px;
+  color: #3d3d4d;
+}
+
+.repository-info p {
+  font-size: 18px;
+  line-height: 23px;
+  color: #737380;
+  margin-top: 8px;
+}
+
+.repository-info ul {
+  display: flex;
+  margin: 40px;
+  list-style: none;
+}
+
+.repository-info li + li {
+  margin-left: 80px;
+}
+
+.repository-info li strong {
+  display: block;
+  font-size: 36px;
+  color: #3d3d4d;
+}
+
+.repository-info li span {
+  display: block;
+  margin-top: 4px;
+  color: #6c6c80;
+}

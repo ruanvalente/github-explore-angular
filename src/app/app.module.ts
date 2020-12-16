@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { SearchComponent } from './components/search/search.component';
 import { RepositoryListComponent } from './components/repository-list/repository-list.component';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { RepositoryInfoComponent } from './components/repository-info/repository-info.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
     SearchComponent,
     RepositoryListComponent,
     LoadingComponent,
+    RepositoryInfoComponent,
   ],
   imports: [
     BrowserModule,
