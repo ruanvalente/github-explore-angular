@@ -34,5 +34,13 @@ export class RepositoryInfoComponent implements OnInit {
       error: (error) => console.error(error),
       complete: () => (this.loading = false),
     });
+
+    this.loading = true;
+
+    this.repositoriesService.getIssues(params).subscribe({
+      next: (issue) => (this.issues = issue),
+      error: (error) => console.error(error),
+      complete: () => (this.loading = false),
+    });
   }
 }

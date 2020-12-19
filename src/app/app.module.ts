@@ -14,6 +14,7 @@ import { SearchComponent } from './components/search/search.component';
 import { RepositoryListComponent } from './components/repository-list/repository-list.component';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { RepositoryInfoComponent } from './components/repository-info/repository-info.component';
+import { IssueListComponent } from './components/issue-list/issue-list.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RepositoryInfoComponent } from './components/repository-info/repository
     RepositoryListComponent,
     LoadingComponent,
     RepositoryInfoComponent,
+    IssueListComponent,
   ],
   imports: [
     BrowserModule,

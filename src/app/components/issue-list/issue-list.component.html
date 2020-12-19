@@ -1,0 +1,15 @@
+<div *ngIf="loading">
+  <app-loading></app-loading>
+</div>
+
+<div class="repo-list">
+  <div id="repo-container" *ngFor="let issue of issues">
+    <a [href]="[issue.html_url]" target="_blank">
+      <div>
+        <strong>{{ issue.title }}</strong>
+        <p>{{ issue.user.login }}</p>
+      </div>
+      <span class="material-icons"> keyboard_arrow_right </span>
+    </a>
+  </div>
+</div>
