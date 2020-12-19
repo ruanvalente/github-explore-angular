@@ -24,16 +24,15 @@ export class RepositoryInfoComponent implements OnInit {
   ngOnInit(): void {
     const params = this.activatedRoute.snapshot.paramMap.get('repository');
     this.loading = true;
-    setTimeout(() => {
-      this.repositoriesService.searchRepository(params).subscribe({
-        next: (repository) => (this.repository = repository),
-        error: (error) => console.error(error),
-      });
-      this.repositoriesService.getIssues(params).subscribe({
-        next: (issue) => (this.issues = issue),
-        error: (error) => console.error(error),
-      });
-      this.loading = false;
-    }, 2000);
+    this.repositoriesService.searchRepository(params).subscribe({
+      next: (repository) => (this.repository = repository),
+      error: (error) => console.error(error),
+      complete: () => (this.loading = false),
+    });
+    this.repositoriesService.getIssues(params).subscribe({
+      next: (issue) => (this.issues = issue),
+      error: (error) => console.error(error),
+      complete: () => (this.loading = false),
+    });
   }
 }
