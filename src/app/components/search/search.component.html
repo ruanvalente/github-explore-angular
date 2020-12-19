@@ -5,7 +5,7 @@
 
   <h1 class="title">Explore seus repositórios no Github</h1>
 
-  <form class="form" (submit)="searchRepository()">
+  <form class="form" (ngSubmit)="searchRepository()">
     <input
       [(ngModel)]="search"
       type="text"
