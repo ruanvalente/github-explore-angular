@@ -24,9 +24,13 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.loading = true;
-    this.repositories =
-      this.storagedService.getData('@GithubExploreAngular') || [];
+    this.loading = true;
+
+    setTimeout(() => {
+      this.repositories =
+        this.storagedService.getData('@GithubExploreAngular') || [];
+      this.loading = false;
+    }, 2000);
 
     this.storagedService.changeRepositoryValue.subscribe({
       next: (changeRepositoryValue) =>
@@ -39,10 +43,10 @@ export class SearchComponent implements OnInit {
     this.repositoriesServices.searchRepository(this.search).subscribe({
       next: (repository) => {
         this.toast.showSucess('Repositório adicionado com sucesso');
-        this.storagedService.saveData(
-          '@GithubExploreAngular',
-          [...this.repositories, repository].reverse()
-        );
+        this.storagedService.saveData('@GithubExploreAngular', [
+          ...this.repositories,
+          repository,
+        ]);
         this.search = '';
       },
       error: (error) => {
