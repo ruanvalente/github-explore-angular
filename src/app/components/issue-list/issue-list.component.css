@@ -26,11 +26,6 @@
 #repo-container a + a {
   margin-top: 16px;
 }
-#repo-container img {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-}
 
 .repo-list div {
   flex: 1;

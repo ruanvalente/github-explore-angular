@@ -8,7 +8,7 @@ import { Issue } from './../../models/issue';
 })
 export class IssueListComponent implements OnInit {
   @Input() issues: Issue[] = [];
-  loading = false;
+  @Input() loading: boolean = false;
 
   constructor() {}
 

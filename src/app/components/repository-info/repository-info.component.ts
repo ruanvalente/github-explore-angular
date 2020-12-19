@@ -12,7 +12,7 @@ import { Repository } from './../../models/repository';
   styleUrls: ['./repository-info.component.css'],
 })
 export class RepositoryInfoComponent implements OnInit {
-  loading = false;
+  loading: boolean = false;
   issues: Issue[];
   repository: Repository;
 

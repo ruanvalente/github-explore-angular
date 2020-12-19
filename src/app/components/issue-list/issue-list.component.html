@@ -1,7 +1,3 @@
-<div *ngIf="loading">
-  <app-loading></app-loading>
-</div>
-
 <div class="repo-list">
   <div id="repo-container" *ngFor="let issue of issues">
     <a [href]="[issue.html_url]" target="_blank">
