@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { Repository } from './../../models/repository';
@@ -16,15 +17,21 @@ export class SearchComponent implements OnInit {
   search = '';
   repositories: Repository[];
   loading = false;
+  hasRouterRepository: boolean = false;
 
   constructor(
     private repositoriesServices: RepositoriesService,
     private storagedService: StoragedService,
-    private toast: ToastrNotifyService
+    private toast: ToastrNotifyService,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.loading = true;
+
+    if (!this.activatedRoute.snapshot.paramMap.get('/')) {
+      this.hasRouterRepository = true;
+    }
 
     setTimeout(() => {
       this.repositories =
