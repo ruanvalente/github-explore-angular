@@ -15,6 +15,7 @@ import { RepositoryListComponent } from './components/repository-list/repository
 import { LoadingComponent } from './shared/loading/loading.component';
 import { RepositoryInfoComponent } from './components/repository-info/repository-info.component';
 import { IssueListComponent } from './components/issue-list/issue-list.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { IssueListComponent } from './components/issue-list/issue-list.component
     LoadingComponent,
     RepositoryInfoComponent,
     IssueListComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
