@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   search = '';
   repositories: Repository[];
   loading = false;
-  hasRouterRepository: boolean = false;
+  hasRouterRepository = false;
 
   constructor(
     private repositoriesServices: RepositoriesService,

@@ -1,16 +1,42 @@
-import { TestBed } from '@angular/core/testing';
-
+import { Repository } from './../models/repository';
 import { StoragedService } from './storaged.service';
 
 describe('StoragedService', () => {
-  let service: StoragedService;
+  let storagedService: StoragedService;
+
+  const mockRepository: Repository[] = [
+    {
+      description: 'description',
+      forks_count: 123,
+      full_name: 'repo name',
+      open_issues_count: 89,
+      owner: {
+        avatar_url: 'myurl',
+        login: 'myLogin',
+      },
+      stargazers_count: 2,
+    },
+  ];
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(StoragedService);
+    storagedService = new StoragedService();
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  afterEach(() => {
+    window.localStorage.clear();
+  });
+
+  it('should be instanced', () => {
+    expect(storagedService).toBeTruthy();
+  });
+
+  it('should save data', () => {
+    expect(storagedService.saveData('item', mockRepository)).toBe();
+  });
+
+  it('should receive the data', () => {
+    window.localStorage.setItem('item', JSON.stringify(mockRepository));
+
+    expect(storagedService.getData('item')).toBeTruthy();
   });
 });
