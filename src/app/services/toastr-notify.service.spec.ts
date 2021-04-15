@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { BrowserTestingModule } from '@angular/platform-browser/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 import { ToastrService, ToastrModule } from 'ngx-toastr';
 
 import { ToastrNotifyService } from './toastr-notify.service';
@@ -13,7 +14,7 @@ describe('ToastrNotifyService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ToastrModule.forRoot(), BrowserTestingModule],
+      imports: [ToastrModule.forRoot(), NoopAnimationsModule],
       providers: [ToastrService],
     });
 
