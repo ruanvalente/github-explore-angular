@@ -10,7 +10,7 @@ import { Repository } from '../models/repository';
 import { Issue } from '../models/issue';
 import { HttpErrorResponse } from '@angular/common/http';
 
-describe('Repositories', () => {
+describe('RepositoriesService', () => {
   let repositoriesService: RepositoriesService;
   let httpMock: HttpTestingController;
 
@@ -93,7 +93,7 @@ describe('Repositories', () => {
     const repositorySearch = 'aush1¹/aush2ia82';
 
     repositoriesService.searchRepository(repositorySearch).subscribe({
-      next: (response) => fail('fail'),
+      next: () => fail(),
       error: (errorReponse: HttpErrorResponse) => {
         expect(errorReponse.statusText).toContain(mockResponse.message);
         expect(errorReponse.status).toEqual(404);
